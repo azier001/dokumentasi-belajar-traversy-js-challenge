@@ -68,7 +68,7 @@ Penjelasan solusi akan ditulis di sini. Panjang dan kedalaman penjelasan akan be
 Jest test sudah disertakan di dalam file course. Kamu hanya perlu menjalankan perintah `npm test`. Terkadang manual test juga akan disertakan di sini.
 
 ```js
-test("Mengembalikan 'Hello, World!' sebagai string", () => {
+test("Returning 'Hello, World!' as a string", () => {
   const result = helloWorld();
   expect(result).toBe('Hello World!');
 });
