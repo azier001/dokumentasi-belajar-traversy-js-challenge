@@ -6,18 +6,19 @@
 
 ## 📚 Daftar Isi
 
-- 🔍 [Rekursi — Kilasan Singkat](#rekursi--kilasan-singkat)
+- 🔍 [Rekursi — Kilasan Singkat](#rekursi-kilasan-singkat)
 - 🎯 [Framework: 3 Pertanyaan Inti Rekursi](#framework-3-pertanyaan-inti-rekursi)
 - 🔬 [Method Penting Sebelum Masuk Kode](#method-penting-sebelum-masuk-kode)
-- 📄 [Versi Awal — Kupas dari Depan](#versi-awal--kupas-dari-depan)
-- 📄 [Kode 1 — Kupas dari Belakang](#kode-1--kupas-dari-belakang)
-- 📄 [Kode 2 — Geser Index](#kode-2--geser-index)
-- 📄 [Kode 3 — Helper Function & Defensive Programming](#kode-3--helper-function--defensive-programming)
-- 📊 [Peta Perbandingan — 4 Versi](#peta-perbandingan--4-versi)
+- 📄 [Versi Awal — Kupas dari Depan](#versi-awal-kupas-dari-depan)
+- 📄 [Kode 1 — Kupas dari Belakang](#kode-1-kupas-dari-belakang)
+- 📄 [Kode 2 — Geser Index](#kode-2-geser-index)
+- 📄 [Kode 3 — Helper Function & Defensive Programming](#kode-3-helper-function-defensive-programming)
+- 📊 [Peta Perbandingan — 4 Versi](#peta-perbandingan-4-versi)
 - ✅ [Test Cases](#test-cases)
 
 ---
 
+<a id="rekursi-kilasan-singkat"></a>
 ## 🔍 Rekursi — Kilasan Singkat
 
 Rekursi adalah sebuah **fungsi yang memanggil dirinya sendiri** sampai kondisi tertentu terpenuhi (*base case*).
@@ -30,6 +31,7 @@ Proses rekursi ada dua fase:
 
 ---
 
+<a id="framework-3-pertanyaan-inti-rekursi"></a>
 ## 🎯 Framework: 3 Pertanyaan Inti Rekursi
 
 Sebelum membaca kode rekursi apapun, tanya 3 pertanyaan ini:
@@ -44,6 +46,7 @@ Sebelum membaca kode rekursi apapun, tanya 3 pertanyaan ini:
 
 ---
 
+<a id="method-penting-sebelum-masuk-kode"></a>
 ## 🔬 Method Penting Sebelum Masuk Kode
 
 ### `substr` vs `slice`
@@ -84,6 +87,7 @@ Jadi `slice(-1)` selalu menunjuk karakter paling ujung kanan.
 
 ---
 
+<a id="versi-awal-kupas-dari-depan"></a>
 ## 📄 Versi Awal — Kupas dari Depan
 
 ```javascript
@@ -132,6 +136,7 @@ reverseString('hello')
 
 ---
 
+<a id="kode-1-kupas-dari-belakang"></a>
 ## 📄 Kode 1 — Kupas dari Belakang
 
 ```javascript
@@ -183,6 +188,7 @@ reverseString('hello')
 
 ---
 
+<a id="kode-2-geser-index"></a>
 ## 📄 Kode 2 — Geser Index
 
 ```javascript
@@ -248,6 +254,7 @@ reverseString('hello', 4)
 
 ---
 
+<a id="kode-3-helper-function-defensive-programming"></a>
 ## 📄 Kode 3 — Helper Function & Defensive Programming
 
 ```javascript
@@ -331,6 +338,7 @@ reverseString('hello')
 
 ---
 
+<a id="peta-perbandingan-4-versi"></a>
 ## 📊 Peta Perbandingan — 4 Versi
 
 ### Strategi
@@ -365,6 +373,7 @@ reverseString('hello')
 
 ---
 
+<a id="test-cases"></a>
 ## ✅ Test Cases
 
 File test menggunakan Jest:
