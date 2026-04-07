@@ -1,0 +1,95 @@
+<svg width="100%" viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg" font-family="monospace">
+  <!-- Labels kiri -->
+  <text x="30" y="58" text-anchor="end" font-size="12" fill="#888780">i=0</text>
+  <text x="30" y="118" text-anchor="end" font-size="12" fill="#888780">i=1</text>
+  <text x="30" y="178" text-anchor="end" font-size="12" fill="#888780">i=4</text>
+  <text x="30" y="238" text-anchor="end" font-size="12" fill="#888780">i=5</text>
+
+  <!-- Row i=0: window [0,1,2] -->
+  <rect x="40" y="34" width="228" height="44" rx="8" fill="#FAEEDA" stroke="#EF9F27" stroke-width="1.5"/>
+  <rect x="40"  y="34" width="68" height="44" rx="8" fill="none" stroke="#378ADD" stroke-width="2"/>
+  <rect x="116" y="34" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="192" y="34" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="268" y="34" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="344" y="34" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="420" y="34" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="496" y="34" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="572" y="34" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <text x="74"  y="62" text-anchor="middle" font-size="15" font-weight="bold" fill="#633806">2</text>
+  <text x="150" y="62" text-anchor="middle" font-size="15" font-weight="bold" fill="#633806">5</text>
+  <text x="226" y="62" text-anchor="middle" font-size="15" font-weight="bold" fill="#633806">3</text>
+  <text x="302" y="62" text-anchor="middle" font-size="15" fill="#888780">1</text>
+  <text x="378" y="62" text-anchor="middle" font-size="15" fill="#888780">11</text>
+  <text x="454" y="62" text-anchor="middle" font-size="15" fill="#888780">7</text>
+  <text x="530" y="62" text-anchor="middle" font-size="15" fill="#888780">6</text>
+  <text x="606" y="62" text-anchor="middle" font-size="15" fill="#888780">4</text>
+  <text x="278" y="62" text-anchor="start" font-size="12" fill="#854F0B">sum = 10</text>
+
+  <!-- Row i=1: window [1,2,3] -->
+  <rect x="116" y="94" width="228" height="44" rx="8" fill="#FAEEDA" stroke="#EF9F27" stroke-width="1.5"/>
+  <rect x="40"  y="94" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="116" y="94" width="68" height="44" rx="8" fill="none" stroke="#378ADD" stroke-width="2"/>
+  <rect x="192" y="94" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="268" y="94" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="344" y="94" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="420" y="94" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="496" y="94" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="572" y="94" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <text x="74"  y="122" text-anchor="middle" font-size="15" fill="#888780">2</text>
+  <text x="150" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#633806">5</text>
+  <text x="226" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#633806">3</text>
+  <text x="302" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#633806">1</text>
+  <text x="378" y="122" text-anchor="middle" font-size="15" fill="#888780">11</text>
+  <text x="454" y="122" text-anchor="middle" font-size="15" fill="#888780">7</text>
+  <text x="530" y="122" text-anchor="middle" font-size="15" fill="#888780">6</text>
+  <text x="606" y="122" text-anchor="middle" font-size="15" fill="#888780">4</text>
+  <text x="354" y="122" text-anchor="start" font-size="12" fill="#854F0B">sum = 9</text>
+
+  <!-- Row i=4: BEST window [4,5,6] -->
+  <rect x="344" y="154" width="228" height="44" rx="8" fill="#9FE1CB" stroke="#1D9E75" stroke-width="2"/>
+  <rect x="40"  y="154" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="116" y="154" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="192" y="154" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="268" y="154" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="344" y="154" width="68" height="44" rx="8" fill="none" stroke="#0F6E56" stroke-width="2.5"/>
+  <rect x="420" y="154" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="496" y="154" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="572" y="154" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <text x="74"  y="182" text-anchor="middle" font-size="15" fill="#888780">2</text>
+  <text x="150" y="182" text-anchor="middle" font-size="15" fill="#888780">5</text>
+  <text x="226" y="182" text-anchor="middle" font-size="15" fill="#888780">3</text>
+  <text x="302" y="182" text-anchor="middle" font-size="15" fill="#888780">1</text>
+  <text x="378" y="182" text-anchor="middle" font-size="15" font-weight="bold" fill="#085041">11</text>
+  <text x="454" y="182" text-anchor="middle" font-size="15" font-weight="bold" fill="#085041">7</text>
+  <text x="530" y="182" text-anchor="middle" font-size="15" font-weight="bold" fill="#085041">6</text>
+  <text x="606" y="182" text-anchor="middle" font-size="15" fill="#888780">4</text>
+  <text x="40"  y="174" text-anchor="start" font-size="12" font-weight="bold" fill="#0F6E56">sum = 24 ✓ MAX</text>
+
+  <!-- Row i=5: window [5,6,7] -->
+  <rect x="420" y="214" width="228" height="44" rx="8" fill="#FAEEDA" stroke="#EF9F27" stroke-width="1.5"/>
+  <rect x="40"  y="214" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="116" y="214" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="192" y="214" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="268" y="214" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="344" y="214" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="420" y="214" width="68" height="44" rx="8" fill="none" stroke="#378ADD" stroke-width="2"/>
+  <rect x="496" y="214" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <rect x="572" y="214" width="68" height="44" rx="8" fill="none" stroke="#D3D1C7" stroke-width="0.5"/>
+  <text x="74"  y="242" text-anchor="middle" font-size="15" fill="#888780">2</text>
+  <text x="150" y="242" text-anchor="middle" font-size="15" fill="#888780">5</text>
+  <text x="226" y="242" text-anchor="middle" font-size="15" fill="#888780">3</text>
+  <text x="302" y="242" text-anchor="middle" font-size="15" fill="#888780">1</text>
+  <text x="378" y="242" text-anchor="middle" font-size="15" fill="#888780">11</text>
+  <text x="454" y="242" text-anchor="middle" font-size="15" font-weight="bold" fill="#633806">7</text>
+  <text x="530" y="242" text-anchor="middle" font-size="15" font-weight="bold" fill="#633806">6</text>
+  <text x="606" y="242" text-anchor="middle" font-size="15" font-weight="bold" fill="#633806">4</text>
+  <text x="40"  y="242" text-anchor="start" font-size="12" fill="#854F0B">sum = 17</text>
+
+  <!-- Legend -->
+  <rect x="40" y="274" width="14" height="14" rx="3" fill="#FAEEDA" stroke="#EF9F27" stroke-width="1.5"/>
+  <text x="60" y="285" font-size="12" fill="#888780">window aktif</text>
+  <rect x="160" y="274" width="14" height="14" rx="3" fill="#9FE1CB" stroke="#1D9E75" stroke-width="2"/>
+  <text x="180" y="285" font-size="12" fill="#888780">window terbaik (max)</text>
+  <rect x="370" y="274" width="14" height="14" rx="3" fill="none" stroke="#378ADD" stroke-width="2"/>
+  <text x="390" y="285" font-size="12" fill="#888780">titik awal i</text>
+</svg>
