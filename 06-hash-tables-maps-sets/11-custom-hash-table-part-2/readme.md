@@ -1,10 +1,12 @@
-# Custom Hash Table (Hash Map)
+# 🗄️ Custom Hash Table (Hash Map)
 
-We looked at the built-in `Map` class, which is a hash table, but now I want to implement our own custom hash table from scratch. This is not going to be a very advanced implementation. It can get much more complex where it can handle collisions better and dynamically resize, but this will be a good starting point.
+> Kita telah mempelajari class `Map` bawaan yang merupakan **hash table**, tetapi sekarang saya ingin mengimplementasikan **custom hash table** kita sendiri dari awal. Ini tidak akan menjadi implementasi yang sangat tingkat lanjut. Implementasi ini bisa menjadi jauh lebih kompleks di mana ia dapat menangani **collisions** dengan lebih baik dan melakukan **dynamic resize**, tetapi ini akan menjadi titik awal yang baik.
 
-## Class & constructor
+---
 
-I'll start by creating a `HashTable` class and then I'll add some methods to it.
+## 🏗️ Class & Konstruktor
+
+Saya akan mulai dengan membuat class `HashTable` dan kemudian saya akan menambahkan beberapa **methods** ke dalamnya.
 
 ```js
 class HashTable {
@@ -14,39 +16,45 @@ class HashTable {
 }
 ```
 
-The constructor will take in a `limit` parameter, which will be the size of the hash table. I'll set a default value of 14, but we can change that when we create a new instance of the `HashTable` class.
+**Constructor** akan menerima parameter `limit`, yang akan menjadi ukuran dari **hash table**. Saya akan menetapkan nilai default 14, tetapi kita dapat mengubahnya saat kita membuat instance baru dari class `HashTable`.
 
-I'll also initialize a `storage` array, which will be the hash table. I'll set it to an empty array for now.
+Saya juga akan menginisialisasi array `storage`, yang akan menjadi **hash table** tersebut. Saya akan menetapkannya sebagai array kosong untuk saat ini.
 
-## `_hash` function
+---
 
-Next, I'll create a hash function. This will take in a key and return an index.
+## 🔢 Fungsi `_hash`
 
-The point of hashing is to get a unique index for each key. There are all kinds of hashing algorithms that can be used such as `MD5`, `SHA-1`, `SHA-256`, etc. We are going to use a very simple hashing algorithm that will just add up the character codes of each character in the key and then return the sum modulo the size of the hash table.
+Selanjutnya, saya akan membuat sebuah **hash function**. Fungsi ini akan menerima sebuah **key** dan mengembalikan sebuah **index**.
 
-This isn't the best hash function because it can cause collisions, which happen when two different keys get the same hash. I just don't want to make this too advanced where it goes over everyone's heads, including my own.
+Tujuan dari **hashing** adalah untuk mendapatkan **index** yang unik untuk setiap **key**. Ada berbagai macam algoritma **hashing** yang dapat digunakan seperti `MD5`, `SHA-1`, `SHA-256`, dll. Kita akan menggunakan algoritma **hashing** yang sangat sederhana yang hanya akan menjumlahkan **character codes** dari setiap karakter dalam **key** dan kemudian mengembalikan hasil **sum modulo** dari ukuran **hash table**.
+
+Ini bukan **hash function** terbaik karena dapat menyebabkan **collisions**, yang terjadi ketika dua **key** yang berbeda mendapatkan **hash** yang sama. Saya hanya tidak ingin membuat ini terlalu tingkat lanjut sehingga sulit dipahami oleh siapa pun, termasuk saya sendiri.
 
 ```js
   _hash(key, max) {
     let hash = 0;
+
     for (let i = 0; i < key.length; i++) {
       hash += key.charCodeAt(i);
     }
+
     return hash % max;
   }
 ```
 
-It takes in a key, which will be the key that we will pass into the `set` function when we create it. It will also take in a max, which will be the size of the hash table.
+Fungsi ini menerima sebuah **key**, yang akan menjadi **key** yang kita lewatkan ke dalam fungsi `set` saat kita membuatnya. Fungsi ini juga menerima sebuah `max`, yang akan menjadi ukuran dari **hash table**.
 
-I'll start by initializing a `hash` variable to 0. Then I'll loop through each character in the key and add the character code to the hash. Each character has a character code. You can get the character code of a character by using the `charCodeAt()` method. I'll add the character code to the hash each time through the loop.
+Saya akan mulai dengan menginisialisasi variabel `hash` ke 0. Kemudian saya akan melakukan **loop** melalui setiap karakter dalam **key** dan menambahkan **character code** ke dalam `hash`. Setiap karakter memiliki **character code**. Anda dapat mendapatkan **character code** dari sebuah karakter dengan menggunakan method `charCodeAt()`. Saya akan menambahkan **character code** ke dalam `hash` setiap kali melalui **loop**.
 
-Then I'll return the hash modulo the max, which will be the size of the hash table. The reason for this is that is to make sure that the hash is within the range of the hash table. By using the modulo operator, we can make sure of that because the result will always be less than the max.
+Kemudian saya akan mengembalikan `hash` **modulo** `max`, yang merupakan ukuran dari **hash table**. Alasan untuk ini adalah untuk memastikan bahwa **hash** berada dalam rentang **hash table**. Dengan menggunakan operator **modulo**, kita dapat memastikannya karena hasilnya akan selalu kurang dari `max`.
 
-I added the underscore to the beginning of the function name because this is a private function. It is not meant to be called outside of the class.
+Saya menambahkan garis bawah (`_`) di awal nama fungsi karena ini adalah **private function**. Fungsi ini tidak dimaksudkan untuk dipanggil di luar class.
 
-## `print` Method
+---
 
-We will create a very simple method that just logs the table. You probably wouldn't want to do this in a real application, but it will be useful for us to see what is going on.
+## 🖨️ Method `printTable`
+
+Kita akan membuat method yang sangat sederhana yang hanya mencatat (**logs**) tabel tersebut. Anda mungkin tidak ingin melakukan ini dalam aplikasi nyata, tetapi ini akan berguna bagi kita untuk melihat apa yang sedang terjadi.
 
 ```js
   printTable() {
@@ -55,20 +63,23 @@ We will create a very simple method that just logs the table. You probably would
 }
 ```
 
-If you instantiate a new `HashTable` and call the `print()` method, you will see an empty array. Put this in your run file or under the class definition:
+Jika Anda membuat instance `HashTable` baru dan memanggil method `printTable()`, Anda akan melihat array kosong. Masukkan ini di file eksekusi Anda atau di bawah definisi class:
 
 ```js
 const ht = new HashTable();
 ht.printTable(); // []
 ```
 
-## `set` Method
+---
 
-Let's create a method to add a key-value pair to the hash table. This will take in a key and a value. We will use the `_hash()` function to get the index where we will store the key-value pair.
+## 📥 Method `set`
+
+Mari kita buat sebuah method untuk menambahkan **key-value pair** ke dalam **hash table**. Method ini akan menerima sebuah **key** dan sebuah **value**. Kita akan menggunakan fungsi `_hash()` untuk mendapatkan **index** tempat kita akan menyimpan **key-value pair** tersebut.
 
 ```js
  set(key, value) {
     const index = this._hash(key, this.limit);
+
     if (this.storage[index] === undefined) {
       this.storage[index] = [[key, value]];
     } else {
@@ -88,13 +99,13 @@ Let's create a method to add a key-value pair to the hash table. This will take 
   }
 ```
 
-This method will take in a key and a value.
+Method ini akan menerima sebuah **key** dan sebuah **value**.
 
-First, we get the index by passing in the key and the limit to the `_hash()` function.
+Pertama, kita mendapatkan **index** dengan melewatkan **key** dan **limit** ke fungsi `_hash()`.
 
-Next, we do a little collision handling. Instead of just storing the key-value pair, we first check to see if there is already something stored at that index. If there is nothing there, we just store the key-value pair in an array at that index. If it is not empty, we will loop through the array at that index and check if the key already exists. If it does, we will update the value. If it doesn't, we will push the key-value pair to the array.
+Selanjutnya, kita melakukan sedikit penanganan **collision**. Alih-alih hanya menyimpan **key-value pair**, kita pertama-tama memeriksa apakah sudah ada sesuatu yang tersimpan di **index** tersebut. Jika tidak ada apa-apa di sana, kita simpan saja **key-value pair** dalam sebuah array pada **index** tersebut. Jika tidak kosong, kita akan melakukan **loop** melalui array pada **index** tersebut dan memeriksa apakah **key** sudah ada. Jika ya, kita akan memperbarui (**update**) **value**-nya. Jika tidak, kita akan melakukan **push** **key-value pair** ke dalam array.
 
-Let's test it out. Add this to your run file:
+Mari kita uji. Tambahkan ini ke file eksekusi Anda:
 
 ```js
 const ht = new HashTable(8);
@@ -105,7 +116,7 @@ ht.set('jill', '555-390-0034');
 ht.printTable();
 ```
 
-You should see something like this:
+Anda seharusnya melihat sesuatu seperti ini:
 
 ```js
 [
@@ -118,19 +129,22 @@ You should see something like this:
 ]
 ```
 
-Remember this image?
+Ingat gambar ini?
 
 ![hash table](../../assets/images/hash-table.png)
 
-It looks very similar to what we have done here. We have an array with 8 items. We have 4 items in the array and 4 empty items. The items in the array are also arrays. Each of those arrays has a key-value pair inside of it. The key is the name and the value is the phone number.
+Ini terlihat sangat mirip dengan apa yang telah kita lakukan di sini. Kita memiliki array dengan 8 item. Kita memiliki 4 item dalam array dan 4 item kosong. Item dalam array juga berupa array. Masing-masing array tersebut memiliki **key-value pair** di dalamnya. **Key** adalah nama dan **value** adalah nomor telepon.
 
-## `get` Method
+---
 
-Now let's create a method to get a value from the hash table. This will take in a key and return the value.
+## 🔍 Method `get`
+
+Sekarang mari kita buat method untuk mendapatkan **value** dari **hash table**. Method ini akan menerima sebuah **key** dan mengembalikan **value**-nya.
 
 ```js
    get(key) {
     const index = this._hash(key, this.limit);
+
     if (this.storage[index] === undefined) {
       return undefined;
     } else {
@@ -143,9 +157,9 @@ Now let's create a method to get a value from the hash table. This will take in 
   }
 ```
 
-First, we get the index by passing in the key and the limit to the `_hash()` function. Then we check if the index is empty. If it is, we will return `undefined`. If it is not empty, we will loop through the array at that index and check if the key exists. If it does, we will return the value.
+Pertama, kita mendapatkan **index** dengan melewatkan **key** dan **limit** ke fungsi `_hash()`. Kemudian kita memeriksa apakah **index** tersebut kosong. Jika ya, kita akan mengembalikan `undefined`. Jika tidak kosong, kita akan melakukan **loop** melalui array pada **index** tersebut dan memeriksa apakah **key** ada. Jika ada, kita akan mengembalikan **value**-nya.
 
-Let's test it out. Add this to your run file:
+Mari kita uji. Tambahkan ini ke file eksekusi Anda:
 
 ```js
 const ht = new HashTable(8);
@@ -159,7 +173,7 @@ console.log(ht.get('james')); // 555-384-5523
 console.log(ht.get('john')); // 555-234-3544
 ```
 
-You should get the following:
+Anda seharusnya mendapatkan hasil berikut:
 
 ```js
 555 - 390 - 0034;
@@ -168,13 +182,16 @@ You should get the following:
 555 - 234 - 3544;
 ```
 
-## `remove` Method
+---
 
-Now let's create a method to remove a key-value pair from the hash table. This will take in a key and remove the key-value pair.
+## 🗑️ Method `remove`
+
+Sekarang mari kita buat method untuk menghapus **key-value pair** dari **hash table**. Method ini akan menerima sebuah **key** dan menghapus **key-value pair** tersebut.
 
 ```js
   remove(key) {
     const index = this._hash(key, this.limit);
+
     if (this.storage[index]) {
       if (
         this.storage[index].length === 1 &&
@@ -192,13 +209,13 @@ Now let's create a method to remove a key-value pair from the hash table. This w
   }
 ```
 
-First, we get the index by passing in the key and the limit to the `_hash()` function.
+Pertama, kita mendapatkan **index** dengan melewatkan **key** dan **limit** ke fungsi `_hash()`.
 
-Then we check if the bucket exists
+Kemudian kita memeriksa apakah **bucket** tersebut ada.
 
-Then we check if the key matches the key at the index and there is only one item in the bucket, delete the bucket, otherwise loop through the bucket and delete the item that matches the key.
+Lalu kita memeriksa jika **key** cocok dengan **key** pada **index** dan hanya ada satu item dalam **bucket**, hapus **bucket** tersebut, jika tidak, lakukan **loop** melalui **bucket** dan hapus item yang cocok dengan **key**.
 
-You should get something like the following:
+Anda seharusnya mendapatkan hasil seperti berikut:
 
 ```js
 [
@@ -209,13 +226,16 @@ You should get something like the following:
 ]
 ```
 
-## `getValues` Method
+---
 
-Now let's create a method to get all the values from the hash table. This will return an array of all the values.
+## 📋 Method `getValues`
+
+Sekarang mari kita buat sebuah method untuk mendapatkan semua **values** dari **hash table**. Method ini akan mengembalikan sebuah array dari semua **values**.
 
 ```js
  getValues() {
     const values = [];
+
     for (let i = 0; i < this.storage.length; i++) {
       if (this.storage[i]) {
         for (let j = 0; j < this.storage[i].length; j++) {
@@ -223,19 +243,22 @@ Now let's create a method to get all the values from the hash table. This will r
         }
       }
     }
+    
     return values;
   }
 ```
 
-Let's test it out. Add this to your run file:
+Mari kita uji. Tambahkan ini ke file eksekusi Anda:
 
 ```js
 console.log(ht.getValues()); // [ '555-234-3544', '555-384-5523', '555-384-9933', '555-390-0034' ]
 ```
 
-## Test Cases
+---
 
-Here is a Jest test that should pass if you have done everything correctly. You do not have to understand this, just run it and make sure it passes.
+## 🧪 Test Cases
+
+Berikut adalah pengujian **Jest** yang seharusnya lulus jika Anda telah melakukan semuanya dengan benar. Anda tidak harus memahami ini, cukup jalankan dan pastikan hasilnya lulus.
 
 ```js
 const HashTable = require('./HashTable');
@@ -304,8 +327,10 @@ describe('HashTable', () => {
 });
 ```
 
-## Conclusion
+---
 
-That's it! We have create our own hash table. We can now add, get, and remove key-value pairs from our hash table. We can also print out the hash table to see what it looks like.
+## 🏁 Kesimpulan
 
-Now we will do a couple challenges using this class.
+Selesai! Kita telah membuat **hash table** kita sendiri. Sekarang kita dapat menambahkan, mengambil, dan menghapus **key-value pairs** dari **hash table** kita. Kita juga dapat mencetak isi **hash table** untuk melihat tampilannya.
+
+Selanjutnya kita akan melakukan beberapa tantangan menggunakan class ini.
